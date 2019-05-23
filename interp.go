@@ -7,7 +7,7 @@ package main
 
 extern void *allocArgv (int argc);
 extern void printArgs (int argc, char **argv);
-extern int perlThings (int argc, char **argv, char **env);
+extern int perlExec (int argc, char **argv, char **env);
 */
 import "C"
 import (
@@ -25,5 +25,5 @@ func main() {
 		defer C.free(unsafe.Pointer(argvC[i]))
 	}
 
-	C.perlThings(argc, (**C.char)(unsafe.Pointer(argvC)), nil)
+	C.perlExec(argc, (**C.char)(unsafe.Pointer(argvC)), nil)
 }

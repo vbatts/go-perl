@@ -7,7 +7,7 @@
 static PerlInterpreter *my_perl;       /***    The Perl interpreter    ***/
 
 int
-perlThings (int argc, char **argv, char **env)
+perlExec (int argc, char **argv, char **env)
 {
   PERL_SYS_INIT3 (&argc, &argv, &env);
   my_perl = perl_alloc ();
