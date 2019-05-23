@@ -1,0 +1,1 @@
+print("farts\n");
